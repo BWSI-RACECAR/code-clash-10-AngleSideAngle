@@ -60,6 +60,7 @@ class Solution:
                     while index % num_actions != 0:
                         thing[index // num_actions] = index % num_actions
                         index //= num_actions
+                    thing = tuple(thing)
 
                     out[index] = thing
                     out[thing] = index

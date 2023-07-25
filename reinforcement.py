@@ -53,15 +53,16 @@ class Solution:
             # actions ^ players
             out = {}
             # fill cur with 0s
-            index = 0
             for action in range(num_actions):
                 for player in range(num_players):
+                    index = action * num_actions + player
                     thing = [0 for i in range(num_players)]
                     while index % num_actions != 0:
                         thing[index // num_actions] = index % num_actions
+                        index //= num_actions
 
-                    out[action ** 2 + player] = thing
-                    out[thing] = action ** 2 + player
+                    out[index] = thing
+                    out[thing] = index
                  
     
 def main():

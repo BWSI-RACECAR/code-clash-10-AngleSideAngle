@@ -56,7 +56,7 @@ class Solution:
             for i in range(num_actions ** num_players):
                 out[i] = ()
                 for j in range(num_players):
-                    out[i] = (i // (num_actions ** j) % num_actions,)
+                    out[i] += (i // (num_actions ** j) % num_actions,)
                 out[out[i]] = i
             return out
     
